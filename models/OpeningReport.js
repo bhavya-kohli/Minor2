@@ -49,7 +49,7 @@ const OpeningReportSchema=new mongoose.Schema({
         },
         attainments:{type:String},
         actions_to_be_taken:{
-            type:string
+            type:String
         }
 
     }],
