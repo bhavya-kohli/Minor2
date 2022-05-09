@@ -1,0 +1,66 @@
+const mongoose =require('mongoose');
+
+const AttainmentSheetSchema=new mongoose.Schema({
+   course_ref:{
+       type:mongoose.Schema.Types.ObjectId,
+       ref:"Course"
+   },
+   co_po_table_ref:{
+       type:mongoose.Schema.Types.ObjectId,
+       ref:"CoPo"
+   },
+   academic_year:{
+       type:String
+   },
+   semester:{
+       type:String
+   },
+   NBA_code:{
+    type:String
+   },
+   avg_co_attainment_table:[
+       {
+           co:{
+               type:String
+           },
+           eval1:{
+            type:String
+           },
+           labtest1:{
+            type:String
+           },
+           eval2:{
+            type:String
+            },
+            labtest2:{
+                type:String
+            },
+            Direct_attainment:{
+                type:String
+            },
+            Student_feedback:{
+                type:String
+            },
+            final:{
+                type:String
+            },
+            CIE:{
+                type:String
+            },
+            SIE:{
+                type:String
+            }
+       }
+   ],
+   Co_po_pso_mapping_table:List[{
+       co:{
+           type:String
+       },
+       attainment:{
+           type:String
+       },
+       pos:[{type:Number}]
+   }]
+});
+
+module.exports=mongoose.model('AttainmentSheet',AttainmentSheetSchema);
